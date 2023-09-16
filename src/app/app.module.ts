@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +20,11 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    //
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

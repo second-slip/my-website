@@ -1,0 +1,40 @@
+mat-toolbar {
+    display: flex;
+    position: fixed;
+    // justify-content: space-between;
+    // padding: 0% 20%;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .large {
+        display: none;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .small {
+        display: none;
+    }
+}
+
+.small {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .hello {
+        width: 23px;
+        height: 23px;
+        line-height: 23px;
+        min-height: 23px;
+        vertical-align: top;
+        font-size: 13px;
+        padding: 0 0;
+        margin: 0;
+    }
+}
