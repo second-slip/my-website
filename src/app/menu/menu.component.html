@@ -1,16 +1,17 @@
 <mat-toolbar class="nav-menu">
     <div>
-        <a mat-button routerLink="/" class="title-button"
-            aria-label="Title button with link to home page">andrew-stuart-cross.com</a>
+        <a mat-button class="title-button" aria-label="Title button with link to home page"
+            routerLink="/">andrew-stuart-cross.com</a>
     </div>
-    <!-- <div>
-            <a [style.cursor]="'pointer'" routerLink="/">andrew-stuart-cross.com</a>
-        </div> -->
+
     <span class="example-spacer"></span>
 
     <div>
-        <a mat-button class="action-button" aria-label="...">Basic</a>
-        <a mat-button class="action-button" aria-label="...">Basic</a>
-        <a mat-button class="action-button" aria-label="...">About</a>
+        <a mat-button class="action-button" aria-label="..." routerLink="/">Basic</a>
+        <a mat-button class="action-button" aria-label="..." routerLink="/">Blog</a>
+        <a mat-button class="action-button" aria-label="..." routerLink="/">About</a>
     </div>
+    <a mat-icon-button class="github-icon-button" aria-label="..." href="https://github.com/andrew-stuart-cross" target="_blank">
+        <img src=".\assets\github-mark.png" />
+    </a>
 </mat-toolbar>
