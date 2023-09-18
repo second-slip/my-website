@@ -1,11 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 
-
-mat-toolbar, .router-outlet {
+.router-outlet {
     padding: 0% 20%;
 }
 
@@ -13,4 +18,14 @@ mat-toolbar, .router-outlet {
     padding-top: 120px;
     // padding-left: 20%;
     // padding-right: 20%;
+}
+
+.page-heading-one {
+    // color: blueviolet;
+    text-align: center;
+}
+
+// obsviously change this...
+p {
+    text-align: justify;
 }

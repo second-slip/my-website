@@ -1,33 +1,27 @@
-mat-toolbar {
+.nav-menu {
     display: flex;
     position: fixed;
-    // justify-content: space-between;
-    // padding: 0% 20%;
+    padding: 0% 20%;
 }
 
 .example-spacer {
     flex: 1 1 auto;
 }
 
+.title-button {
+    font-weight: bold;
+    font-size: medium;
+}
+
 @media only screen and (max-width: 768px) {
-    .large {
-        display: none;
+    .nav-menu {
+        padding: 10% 0%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
-}
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .small {
-        display: none;
-    }
-}
-
-.small {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    .hello {
+    .action-button {
         width: 23px;
         height: 23px;
         line-height: 23px;
@@ -37,4 +31,8 @@ mat-toolbar {
         padding: 0 0;
         margin: 0;
     }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) {
 }
