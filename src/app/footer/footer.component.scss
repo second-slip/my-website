@@ -1,0 +1,19 @@
+.footer {
+    padding: 0% 20%;
+    margin: 3% 0%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333;  /* old IE */
+    background-color: #333;  /* Modern Browsers */
+  }
