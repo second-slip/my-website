@@ -13,12 +13,21 @@
     font-size: medium;
 }
 
+.action-buttons, .github-icon-button {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
 @media only screen and (max-width: 768px) {
     .nav-menu {
-        padding: 10% 0%;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        padding: 7% 0%;
     }
 
     .action-button {
@@ -38,5 +47,5 @@
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
 }
