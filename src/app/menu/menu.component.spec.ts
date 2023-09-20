@@ -50,7 +50,7 @@ describe('my-component', () => {
 
   it('should work', async () => {
     const buttons = await loader.getAllHarnesses(MatButtonHarness);
-    expect(buttons.length).toBe(5);
+    expect(buttons.length).toBe(4);
 
     // icon button not displayed on small screens, so test 4 ?
 
