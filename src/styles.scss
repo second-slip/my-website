@@ -7,16 +7,13 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding-top: 100px;
 }
-
 
 .router-outlet {
     padding: 0% 20%;
 }
 
-.router-outlet {
-    padding-top: 120px;
-}
 
 .page-main-heading {
     text-align: center;
@@ -26,3 +23,14 @@ body {
 p {
     text-align: justify;
 }
+
+.alert {
+    padding: 3%;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #f44336;
+}
+
+

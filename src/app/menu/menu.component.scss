@@ -2,6 +2,8 @@
     display: flex;
     position: fixed;
     padding: 0% 20%;
+    z-index: 9999;
+    top: 0;
 }
 
 .example-spacer {
@@ -17,6 +19,13 @@
     display: flex;
     align-items: center;
 }
+
+.activebutton {
+    // background-color: rgb(51, 51, 51);
+    // color: white;
+    text-decoration: underline;
+}
+
 
 
 
