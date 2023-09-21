@@ -1,3 +1,8 @@
+mat-toolbar {
+    min-height: 80px;
+    height: 80px;
+}
+
 .nav-menu {
     display: flex;
     position: fixed;
@@ -28,15 +33,12 @@
 
 
 
-
-
-
 @media only screen and (max-width: 768px) {
     .nav-menu {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        padding: 7% 0%;
+        padding: 3% 0%;
     }
 
     .action-button {
