@@ -27,7 +27,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/apple-touch-icon.png"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",

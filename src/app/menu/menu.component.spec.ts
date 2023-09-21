@@ -8,6 +8,7 @@ import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatButtonHarness } from '@angular/material/button/testing';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 // let loader: HarnessLoader;
 
@@ -40,8 +41,10 @@ describe('my-component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule(
-      { imports: [MatButtonModule, MatToolbarModule], 
-        declarations: [MenuComponent]
+      {
+        imports: [MatButtonModule, MatToolbarModule],
+        declarations: [MenuComponent],
+        schemas: [NO_ERRORS_SCHEMA],
       })
       .compileComponents();
     fixture = TestBed.createComponent(MenuComponent);
