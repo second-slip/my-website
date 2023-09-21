@@ -14,7 +14,6 @@ body {
     padding: 0% 20%;
 }
 
-
 .page-main-heading {
     text-align: center;
 }
@@ -28,9 +27,12 @@ p {
     padding: 3%;
     color: white;
 }
-
 .alert-danger {
     background-color: #f44336;
 }
-
-
+.alert-success {
+    background-color: #f44336;
+}
+.alert-info {
+    background-color: #f44336;
+}
