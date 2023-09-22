@@ -1,4 +1,4 @@
-# MyWebsite
+# andrewstuartcross.co.uk
 
 This is the repository for my Angular 16 personal website which is served at <a href="https://www.andrewstuartcross.co.uk/">andrewstuartcross.co.uk/</a>
 
