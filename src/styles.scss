@@ -10,10 +10,27 @@ body {
     padding-top: 100px;
 }
 
-.router-outlet {
-    padding: 0% 20%;
+/* Small devices (up to 768px) */
+@media only screen and (max-width: 768px) {
+    .router-outlet {
+        padding: 0% 8%;
+    }
+    .footer {
+        padding: 0% 8%;
+        margin: 3% 0%;
+    }
 }
 
+/* Larger devices (769px and up) */
+@media only screen and (min-width: 769px) {
+    .router-outlet {
+        padding: 0% 20%;
+    }
+    .footer {
+        padding: 0% 20%;
+        margin: 3% 0%;
+    }
+}
 
 .page-main-heading {
     text-align: center;
@@ -24,13 +41,27 @@ p {
     text-align: justify;
 }
 
+.italic {
+    font-style: italic;
+}
+
 .alert {
     padding: 3%;
     color: white;
+}
+
+.strong-title {
+    padding-right: 1%;
 }
 
 .alert-danger {
     background-color: #f44336;
 }
 
+.alert-success {
+    background-color: #ddffdd;
+}
 
+.alert-info {
+    background-color: #0bc9cd; // 'Robin egg blue'
+}
