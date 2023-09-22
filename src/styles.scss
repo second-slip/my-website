@@ -10,8 +10,26 @@ body {
     padding-top: 100px;
 }
 
-.router-outlet {
-    padding: 0% 20%;
+/* Small devices (up to 768px) */
+@media only screen and (max-width: 768px) {
+    .router-outlet {
+        padding: 0% 8%;
+    }
+    .footer {
+        padding: 0% 8%;
+        margin: 3% 0%;
+    }
+}
+
+/* Larger devices (769px and up) */
+@media only screen and (min-width: 769px) {
+    .router-outlet {
+        padding: 0% 20%;
+    }
+    .footer {
+        padding: 0% 20%;
+        margin: 3% 0%;
+    }
 }
 
 .page-main-heading {
