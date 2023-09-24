@@ -99,6 +99,9 @@
               "src/styles.scss"
             ],
             "scripts": [],
+            "codeCoverageExclude": [
+              "src/app/test-helpers/**"
+            ],
             "karmaConfig": "karma.conf.js"
           }
         }
