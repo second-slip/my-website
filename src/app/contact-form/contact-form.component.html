@@ -1,0 +1,55 @@
+<p>contact-form works!</p>
+
+<!-- Hide after successful submission -->
+
+<ng-container *ngIf="contactForm; else error">
+  <form class="contact-form" [formGroup]="contactForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name">
+      <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Must be a valid email" formControlName="email">
+      <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+        The email is <strong>not valid</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput type="text" formControlName="message"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+          Message is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">
+          The message is <strong>too short</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+  </form>
+
+  <pre>Form value: {{contactForm.value | json}}</pre>
+
+  <pre>Form status: {{contactForm.status | json}}</pre>
+
+
+</ng-container>
+
+<ng-template #error>
+  <p>error....................</p>
+  <!-- <div *ngIf="(_service.isError | async); else loading" class="alert alert-danger" data-testid="error">
+      <strong>Whoops!</strong> There was an error retrieving the data.<br>
+      <button type="button" class="btn btn-primary btn-sm btn-try-again" data-testid="reload-button"
+          (click)="reload()">Try
+          Again</button>
+  </div> -->
+</ng-template>
