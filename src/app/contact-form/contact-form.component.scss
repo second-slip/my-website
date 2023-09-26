@@ -1,13 +1,23 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
+/* Small devices (up to 768px) */
+@media only screen and (max-width: 768px) {
+  .contact-form {
     width: 100%;
   }
-  
-  .example-full-width {
-    width: 100%;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 769px) {
+  .contact-form {
+    width: 75%;
   }
-  
-  td {
-    padding-right: 8px;
-  }
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.form-submit-btn {
+  margin-bottom: 2%;
+}
+
