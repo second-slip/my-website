@@ -1,0 +1,72 @@
+<h3>Contact form</h3>
+
+<ng-container *ngIf="contactForm; else error">
+
+  <p>Fill out and submit this form, below, to send a message to me.</p>
+
+  <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="submitProgress !== 'success'">
+
+    <mat-form-field class="full-width" id="name">
+      <mat-label>Name</mat-label>
+      <input matInput id="name" name="name" type="text" formControlName="name">
+      <mat-error *ngIf="contactForm.get('name')?.hasError('required')" class="validation-required-name">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" id="email">
+      <mat-label>Email</mat-label>
+      <input matInput id="email" name="email" type="email" placeholder="Must be a valid email" formControlName="email">
+      <mat-error *ngIf="contactForm.get('email')?.hasError('required')" class="validation-required-email">
+        Email is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('email')?.hasError('email')" class="validation-email-email">
+        The email is <strong>not valid</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <p>
+      <mat-form-field class="full-width" id="message">
+        <mat-label>Message</mat-label>
+        <textarea matInput id="message" name="message" type="textarea" formControlName="message"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')" class="validation-required-message">
+          Message is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')" class="validation-length-message">
+          The message is <strong>too short</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <div>
+      <button mat-stroked-button class="form-submit-btn" color="primary" type="submit" [disabled]="!contactForm.valid"
+        *ngIf="!requesting">Submit</button>
+      <button mat-stroked-button *ngIf="requesting" class="form-submit-btn" type="button" disabled>
+        Submitting the message...
+        <mat-icon><mat-spinner diameter="15">
+          </mat-spinner></mat-icon>
+      </button>
+    </div>
+
+  </form>
+
+  <!-- <pre>Form value: {{contactForm.value | json}}</pre>
+  <pre>Form status: {{contactForm.status | json}}</pre>
+  <pre>Submit Progress: {{submitProgress}} </pre> -->
+
+
+  <p *ngIf="submitProgress === 'success'" class="alert alert-success">
+    <strong>Success!</strong> The message was successfully sent.
+  </p>
+
+  <p *ngIf="submitProgress === 'error'" class="alert alert-danger">
+    <strong>Whoops!</strong> An error occurred. Please try submitting the form again.
+  </p>
+
+</ng-container>
+
+<ng-template #error>
+  <p class="alert alert-danger">
+    <strong>Whoops!</strong> There was an error creating the Contact Form. Please try refreshing the page.
+  </p>
+</ng-template>

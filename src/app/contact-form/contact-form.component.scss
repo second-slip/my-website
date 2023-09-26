@@ -1,0 +1,23 @@
+/* Small devices (up to 768px) */
+@media only screen and (max-width: 768px) {
+  .contact-form {
+    width: 100%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 769px) {
+  .contact-form {
+    width: 75%;
+  }
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.form-submit-btn {
+  margin-bottom: 2%;
+}
+
