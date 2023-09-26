@@ -32,7 +32,7 @@ describe('ContactFormService', () => {
 
     const request = controller.expectOne({
       method: 'POST',
-      url: 'api/.................',
+      url: 'https://birder-server.azurewebsites.net/api/message/send-contact-message',
     });
     expect(request.request.body).toEqual(contactFormModel);
     request.flush(postContactFormResponse);
