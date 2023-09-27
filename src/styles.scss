@@ -45,6 +45,10 @@ p {
     font-style: italic;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .alert {
     padding: 3%;
     color: black;
@@ -59,7 +63,7 @@ p {
 }
 
 .alert-success {
-    background-color: #77FF33;
+    background-color: #77ff33;
 }
 
 .alert-info {
