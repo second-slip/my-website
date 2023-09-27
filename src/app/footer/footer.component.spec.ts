@@ -26,12 +26,17 @@ describe('FooterComponent', () => {
 
   it('should render GitHub button', async () => {
     const buttons = await loader.getAllHarnesses(MatButtonHarness);
-    expect(buttons.length).toBe(1);
+    expect(buttons.length).toBe(2);
   });
 
   it('should render an active GitHub icon button', async () => {
     const gitHubIconButton = await loader.getHarness(MatButtonHarness.with({ selector: '.github-icon-button' }));
     expect(await gitHubIconButton.isDisabled()).toBe(false);
+  });
+
+  it('should render an active LinkedIn icon button', async () => {
+    const linkedInIconButton = await loader.getHarness(MatButtonHarness.with({ selector: '.linkedin-icon-button' }));
+    expect(await linkedInIconButton.isDisabled()).toBe(false);
   });
 
   it('should set the year property to current year', () => {
