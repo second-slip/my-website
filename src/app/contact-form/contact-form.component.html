@@ -54,13 +54,14 @@
   <pre>Form status: {{contactForm.status | json}}</pre>
   <pre>Submit Progress: {{submitProgress}} </pre> -->
 
-
   <p *ngIf="submitProgress === 'success'" class="alert alert-success">
     <strong>Success!</strong> The message was successfully sent.
   </p>
 
   <p *ngIf="submitProgress === 'error'" class="alert alert-danger">
     <strong>Whoops!</strong> An error occurred. Please try submitting the form again.
+    <br>If the problem persists, try to contact me at <a href="https://www.linkedin.com/in/andrewstuartcross/"
+      target="_blank"><img class="text-icons" src="https://i.stack.imgur.com/gVE0j.png" /> LinkedIn</a>.
   </p>
 
 </ng-container>
