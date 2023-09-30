@@ -38,7 +38,8 @@
       </mat-form-field>
     </p>
 
-    <div>
+    <!-- <div> -->
+      <!-- todo: fix the button location -- too far -->
       <button mat-stroked-button class="form-submit-btn" color="primary" type="submit" [disabled]="!contactForm.valid"
         *ngIf="!requesting">Submit</button>
       <button mat-stroked-button *ngIf="requesting" class="form-submit-btn" type="button" disabled>
@@ -46,7 +47,7 @@
         <mat-icon><mat-spinner diameter="15">
           </mat-spinner></mat-icon>
       </button>
-    </div>
+    <!-- </div> -->
 
   </form>
 

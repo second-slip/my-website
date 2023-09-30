@@ -45,6 +45,10 @@ p {
     font-style: italic;
 }
 
+li { //:not(:last-child) { 
+    margin-bottom: 6px;  
+ }
+
 .bold {
     font-weight: bold;
 }
