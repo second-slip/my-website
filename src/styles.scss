@@ -32,11 +32,14 @@ body {
     }
 }
 
-.page-main-heading {
+.centre {
     text-align: center;
 }
 
-// obsviously change this...
+section {
+    margin-top: 3%;
+}
+
 p {
     text-align: justify;
 }
@@ -45,9 +48,10 @@ p {
     font-style: italic;
 }
 
-li { //:not(:last-child) { 
-    margin-bottom: 6px;  
- }
+li {
+    //:not(:last-child) {
+    margin-bottom: 10px;
+}
 
 .bold {
     font-weight: bold;

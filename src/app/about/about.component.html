@@ -1,52 +1,72 @@
-<h1 class="page-main-heading">About</h1>
+<h1 class="centre">About</h1>
 
 <P>
     This page is about me, about this website; and about how to contact me, if you are interested.
 </P>
 
-<h2>About me</h2>
+<section >
 
-<P>
-    My name is Andrew and I am a software developer. I am experienced in the full stack development of websites and
-    desktop applications.
-</P>
+    <h2>About me</h2>
 
-<ul>
-    <li>I work with .NET (C#) and Angular.</li>
-    <li>I am always learning how to write better code.</li>
-    <li>I'm interested in practical applications of data science and machine learning.</li>
-</ul>
+    <P>
+        My name is Andrew and I am a software developer. I am experienced in the full stack development of websites and
+        desktop applications.
+    </P>
 
-<p>There is more information on my <a href="https://github.com/andrew-stuart-cross/andrew-stuart-cross"
-        target="_blank"><img class="text-icons" src=".\assets\github-mark.png" /> GitHub</a> profile as well as the repositories for my personal code projects.</p>
+    <ul>
+        <li>I work with .NET (C#) and Angular.</li>
+        <li>I am always learning how to write better code.</li>
+        <li>I'm interested in practical applications of data science and machine learning.</li>
+    </ul>
+
+    <p>There is more information on my <a href="https://github.com/andrew-stuart-cross/andrew-stuart-cross"
+            target="_blank"><img class="text-icons" src=".\assets\github-mark.png" /> GitHub</a> profile as well as the
+        repositories for my personal code projects.</p>
+
+</section>
+
+<section >
+
+    <h2>About this website</h2>
+
+    <p>
+        This website is built on the Angular v16 development platform. <a href="https://angular.io/"
+            target="_blank">Angular</a> is a TypeScript-based, open-source,
+        single-page web application framework. This website is also:
+    </p>
+
+    <ul>
+        <li>built with Material Design, the official <a href="https://material.angular.io/" target="_blank">Angular
+                Material</a> UI components library.; </li>
+        <li>tested with the <a href="https://jasmine.github.io/">Jasmine</a> testing framework and the <a
+                href="https://karma-runner.github.io/">Karma</a> test runner. The UI components are tested with Angular
+            Material's component <a href="https://material.angular.io/guide/using-component-harnesses"
+                target="_blank">test
+                harnesses</a>. The test code coverage is: <a
+                href="https://codecov.io/gh/andrew-stuart-cross/my-website">
+                <img class="text-icons"
+                    src="https://codecov.io/gh/andrew-stuart-cross/my-website/branch/master/graph/badge.svg?token=cCIxAWPeGl" />
+            </a></li>
+        <li>published with the <a href="https://azure.microsoft.com/en-gb/products/app-service/static/"
+                target="_blank">Azure Static Web Apps</a> service.</li>
+        <li>open-source in the <a href="https://github.com/andrew-stuart-cross/my-website"
+                target="_blank">my-website</a> GitHub repository.</li>
+        <li>continuosuly integratated with <a>GitHub Actions</a> to manage the build, testing and deployment
+            processes.</li>
+    </ul>
+
+</section>
 
 
-<h2>About this website</h2>
+<section >
 
-<p>
-    This website is built on the Angular v16 development platform. <a href="https://angular.io/"
-        target="_blank">Angular</a> is a TypeScript-based, open-source, 
-    single-page web application framework.
-</p>
+    <h2>Contact me</h2>
 
-<p>This website is:</p>
+    <p>You can contact me at <a href="https://www.linkedin.com/in/andrewstuartcross/" target="_blank"><img
+                class="text-icons" src="https://i.stack.imgur.com/gVE0j.png" /> LinkedIn</a>; or by filling out the
+        form,
+        below:-</p>
 
-<ul>
-    <li>built with <span class="bold">Material Design</span>, the official <a href="https://material.angular.io/" target="_blank">Angular Material</a> UI components library.; </li>
-    <li><span class="bold">tested</span> with the <a href="https://jasmine.github.io/">Jasmine</a> testing framework and the <a href="https://karma-runner.github.io/">Karma</a> test runner.  The UI components are tested with Angular Material's component <a
-            href="https://material.angular.io/guide/using-component-harnesses" target="_blank">test harnesses</a>.  The test code coverage is: <a href="https://codecov.io/gh/andrew-stuart-cross/my-website">
-            <img class="text-icons" src="https://codecov.io/gh/andrew-stuart-cross/my-website/branch/master/graph/badge.svg?token=cCIxAWPeGl" />
-        </a></li>
-    <li><span class="bold">published</span> with the <a href="https://azure.microsoft.com/en-gb/products/app-service/static/"
-            target="_blank">Azure Static Web Apps</a> service.</li>
-    <li><span class="bold">open-source</span> in the <a href="https://github.com/andrew-stuart-cross/my-website" target="_blank">my-website</a> GitHub repository.</li>
-    <li><span class="bold">continuosuly integratated</span> with <a>GitHub Actions</a> to manage the build, testing and deployment processes.</li>
-</ul>
+    <app-contact-form></app-contact-form>
 
-<h2>Contact me</h2>
-
-<p>You can contact me at <a href="https://www.linkedin.com/in/andrewstuartcross/" target="_blank"><img
-            class="text-icons" src="https://i.stack.imgur.com/gVE0j.png" /> LinkedIn</a>; or by filling out the form,
-    below:-</p>
-
-<app-contact-form></app-contact-form>
+</section>

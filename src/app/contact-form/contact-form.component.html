@@ -2,7 +2,7 @@
 
 <ng-container *ngIf="contactForm; else error">
 
-  <p>Fill out and submit this form to send a message to me.</p>
+  <p>Complete and submit this form to send a message to me.</p>
 
   <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="submitProgress !== 'success'">
 
