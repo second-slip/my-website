@@ -1,74 +1,102 @@
 <h3>Contact form</h3>
 
-<ng-container *ngIf="contactForm; else error">
+@if (contactForm) {
 
-  <p>Complete and submit this form to send a message to me.</p>
+<p>Complete and submit this form to send a message to me.</p>
 
-  <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="submitProgress !== 'success'">
+@if (submitProgress !== 'success') {
+<form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-    <mat-form-field class="full-width" id="name">
-      <mat-label>Name</mat-label>
-      <input matInput id="name" name="name" type="text" formControlName="name">
-      <mat-error *ngIf="contactForm.get('name')?.hasError('required')" class="validation-required-name">
-        Name is <strong>required</strong>
+  <mat-form-field class="full-width" id="name">
+    <mat-label>Name</mat-label>
+    <input matInput id="name" name="name" type="text" formControlName="name">
+    @if (contactForm.get('name')?.hasError('required')) {
+    <mat-error class="validation-required-name">
+      Name is <strong>required</strong>
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="full-width" id="email">
+    <mat-label>Email</mat-label>
+    <input matInput id="email" name="email" type="email" placeholder="Must be a valid email" formControlName="email">
+    @if (contactForm.get('email')?.hasError('required')) {
+    <mat-error class="validation-required-email">
+      Email is <strong>required</strong>
+    </mat-error>
+    }
+    @if (contactForm.get('email')?.hasError('email')) {
+    <mat-error class="validation-email-email">
+      The email is <strong>not valid</strong>
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <p>
+    <mat-form-field class="full-width" id="message">
+      <mat-label>Message</mat-label>
+      <textarea matInput id="message" name="message" type="textarea" formControlName="message"></textarea>
+      @if (contactForm.get('message')?.hasError('required')) {
+      <mat-error class="validation-required-message">
+        Message is <strong>required</strong>
       </mat-error>
+      }
+      @if (contactForm.get('message')?.hasError('minlength')) {
+      <mat-error class="validation-length-message">
+        The message is <strong>too short</strong>
+      </mat-error>
+      }
     </mat-form-field>
+  </p>
 
-    <mat-form-field class="full-width" id="email">
-      <mat-label>Email</mat-label>
-      <input matInput id="email" name="email" type="email" placeholder="Must be a valid email" formControlName="email">
-      <mat-error *ngIf="contactForm.get('email')?.hasError('required')" class="validation-required-email">
-        Email is <strong>required</strong>
-      </mat-error>
-      <mat-error *ngIf="contactForm.get('email')?.hasError('email')" class="validation-email-email">
-        The email is <strong>not valid</strong>
-      </mat-error>
-    </mat-form-field>
+  <!-- <div> -->
+  <!-- todo: fix the button location -- too far -->
+  @if (!requesting) {
+  <button mat-stroked-button class="form-submit-btn" color="primary" type="submit"
+    [disabled]="!contactForm.valid">Submit</button>
+  }
+  @if (requesting) {
+  <button mat-stroked-button class="form-submit-btn" type="button" disabled>
+    Submitting the message...
+    <mat-icon><mat-spinner diameter="15">
+      </mat-spinner></mat-icon>
+  </button>
+  }
+  <!-- </div> -->
 
-    <p>
-      <mat-form-field class="full-width" id="message">
-        <mat-label>Message</mat-label>
-        <textarea matInput id="message" name="message" type="textarea" formControlName="message"></textarea>
-        <mat-error *ngIf="contactForm.get('message')?.hasError('required')" class="validation-required-message">
-          Message is <strong>required</strong>
-        </mat-error>
-        <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')" class="validation-length-message">
-          The message is <strong>too short</strong>
-        </mat-error>
-      </mat-form-field>
-    </p>
+</form>
+}
 
-    <!-- <div> -->
-      <!-- todo: fix the button location -- too far -->
-      <button mat-stroked-button class="form-submit-btn" color="primary" type="submit" [disabled]="!contactForm.valid"
-        *ngIf="!requesting">Submit</button>
-      <button mat-stroked-button *ngIf="requesting" class="form-submit-btn" type="button" disabled>
-        Submitting the message...
-        <mat-icon><mat-spinner diameter="15">
-          </mat-spinner></mat-icon>
-      </button>
-    <!-- </div> -->
-
-  </form>
-
-  <!-- <pre>Form value: {{contactForm.value | json}}</pre>
+<!-- <pre>Form value: {{contactForm.value | json}}</pre>
   <pre>Form status: {{contactForm.status | json}}</pre>
   <pre>Submit Progress: {{submitProgress}} </pre> -->
 
-  <p *ngIf="submitProgress === 'success'" class="alert alert-success">
-    <strong>Success!</strong> The message was successfully sent.
-  </p>
+@if (submitProgress === 'success') {
+<p class="alert alert-success">
+  <strong>Success!</strong> The message was successfully sent.
+</p>
+}
 
-  <p *ngIf="submitProgress === 'error'" class="alert alert-danger">
-    <strong>Whoops!</strong> An error occurred. Please try submitting the form again.
-    <br>If the problem persists, try to contact me at <a href="https://www.linkedin.com/in/andrewstuartcross/"
-      target="_blank"><img class="text-icons" src="https://i.stack.imgur.com/gVE0j.png" alt="LinkedIn icon"/> LinkedIn</a>.
-  </p>
+@if (submitProgress === 'error') {
+<p class="alert alert-danger">
+  <strong>Whoops!</strong> An error occurred. Please try submitting the form again.
+  <br>If the problem persists, try to contact me at <a href="https://www.linkedin.com/in/andrewstuartcross/"
+    target="_blank"><img class="text-icons" src="https://i.stack.imgur.com/gVE0j.png" alt="LinkedIn icon" />
+    LinkedIn</a>.
+</p>
+}
 
-</ng-container>
 
-<ng-template #error>
+} @else {
+
+<p class="alert alert-danger">
+  <strong>Whoops!</strong> There was an error creating the Contact Form. Please try refreshing the page.
+</p>
+
+}
+
+<!-- <ng-template #error>
   <p class="alert alert-danger">
     <strong>Whoops!</strong> There was an error creating the Contact Form. Please try refreshing the page.
   </p>
-</ng-template>
+</ng-template> -->
