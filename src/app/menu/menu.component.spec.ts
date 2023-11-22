@@ -47,12 +47,11 @@ describe('my-component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule(
       {
-        imports: [MatButtonModule, MatToolbarModule, RouterTestingModule.withRoutes([
-          { path: 'login', component: BlogComponent },
-        ])],
-        declarations: [MenuComponent],
-        schemas: [NO_ERRORS_SCHEMA]
-      })
+    imports: [MatButtonModule, MatToolbarModule, RouterTestingModule.withRoutes([
+            { path: 'login', component: BlogComponent },
+        ]), MenuComponent],
+    schemas: [NO_ERRORS_SCHEMA]
+})
       .compileComponents();
     router = TestBed.inject(Router);
     fixture = TestBed.createComponent(MenuComponent);

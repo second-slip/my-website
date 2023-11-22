@@ -36,10 +36,9 @@ describe('ContactFormComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      declarations: [ContactFormComponent],
-      imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatProgressSpinnerModule ],
-      providers: [{ provide: ContactFormService, useValue: fakeContactFormService }],
-    }).compileComponents();
+    imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatProgressSpinnerModule, ContactFormComponent],
+    providers: [{ provide: ContactFormService, useValue: fakeContactFormService }],
+}).compileComponents();
 
     fixture = TestBed.createComponent(ContactFormComponent);
     component = fixture.componentInstance;
