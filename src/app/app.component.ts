@@ -11,5 +11,5 @@ import { MenuComponent } from './menu/menu.component';
     imports: [MenuComponent, RouterOutlet, FooterComponent]
 })
 export class AppComponent {
-  title = 'my-website';
+  title = 'A S Cross';
 }
