@@ -55,8 +55,15 @@ mat-toolbar {
     .github-icon-button {
         display: none;
     }
+
+    .full {
+        display: none;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 769px) {
+    .abridge {
+        display: none;
+    }
 }

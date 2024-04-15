@@ -60,7 +60,7 @@ describe('my-component', () => {
 
   it('should work', async () => {
     const buttons = await loader.getAllHarnesses(MatButtonHarness);
-    expect(buttons.length).toBe(5);
+    expect(buttons.length).toBe(6);
 
     // icon button not displayed on small screens, so test 4 ?
 
@@ -77,17 +77,17 @@ describe('my-component', () => {
   });
 
   it('should render an active Home button', async () => {
-    const homeLink = await loader.getHarness(MatButtonHarness.with({ text: 'Home' }));
+    const homeLink = await loader.getHarness(MatButtonHarness.with({ text: 'About' }));
     expect(await homeLink.isDisabled()).toBe(false);
   });
 
   it('should render an active Blog button', async () => {
-    const blogLink = await loader.getHarness(MatButtonHarness.with({ text: 'Blog' }));
+    const blogLink = await loader.getHarness(MatButtonHarness.with({ text: 'Code' }));
     expect(await blogLink.isDisabled()).toBe(false);
   });
 
   it('should render an active About button', async () => {
-    const aboutLink = await loader.getHarness(MatButtonHarness.with({ text: 'About' }));
+    const aboutLink = await loader.getHarness(MatButtonHarness.with({ text: 'Miscellany' }));
     expect(await aboutLink.isDisabled()).toBe(false);
   });
 
