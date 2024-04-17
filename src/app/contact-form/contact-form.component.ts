@@ -52,12 +52,12 @@ export class ContactFormComponent {
   }
 
   private _mapToModel(): IContactForm {  // todo: try / catch here: this.submitProgress = 'error';
-    const form = <IContactForm>{
+    const model = <IContactForm>{
       name: this.contactForm.value.name,
       email: this.contactForm.value.email,
       message: this.contactForm.value.message
     };
 
-    return form;
+    return model;
   }
 }
