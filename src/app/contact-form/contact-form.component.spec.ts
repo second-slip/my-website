@@ -10,7 +10,7 @@ import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatInputHarness } from '@angular/material/input/testing';
 import { MatButtonHarness } from '@angular/material/button/testing';
-import {MatFormFieldHarness} from '@angular/material/form-field/testing'
+import { MatFormFieldHarness } from '@angular/material/form-field/testing'
 import { name, email, message, contactFormModel } from '../test-helpers/contact-form-helpers';
 import { of, throwError } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
@@ -36,9 +36,9 @@ describe('ContactFormComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-    imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatProgressSpinnerModule, ContactFormComponent],
-    providers: [{ provide: ContactFormService, useValue: fakeContactFormService }],
-}).compileComponents();
+      imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatProgressSpinnerModule, ContactFormComponent],
+      providers: [{ provide: ContactFormService, useValue: fakeContactFormService }],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ContactFormComponent);
     component = fixture.componentInstance;
@@ -224,7 +224,7 @@ describe('ContactFormComponent', () => {
 
       const submitBtn = await loader.getHarness(MatButtonHarness.with({ text: 'Submit' }));
       expect(await submitBtn.isDisabled()).toBe(true);
-  
+
       await submitBtn.click();
 
       expect(fakeContactFormService.postContactForm).not.toHaveBeenCalled();
@@ -302,7 +302,7 @@ describe('ContactFormComponent', () => {
 
       expect(fixture.componentInstance.submitProgress).toBe('success');
     });
-    
+
 
     it('should hide the form on successful submission & show alert-success message', async () => {
       await setup({ postContactForm: of({ success: true }) });
@@ -335,7 +335,7 @@ describe('ContactFormComponent', () => {
 
   });
 
-  describe('server responds unsuccessfully', () => { 
+  describe('server responds unsuccessfully', () => {
 
     it('should update submitProgress to "error"', async () => {
       await setup({ postContactForm: of({ success: false }) });
@@ -395,7 +395,7 @@ describe('ContactFormComponent', () => {
 
   });
 
-  describe('server error', () => { 
+  describe('server error', () => {
 
     it('should update submitProgress to "error"', async () => {
       await setup({ postContactForm: throwError(() => new Error('test')) });

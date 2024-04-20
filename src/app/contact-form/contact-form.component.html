@@ -1,7 +1,5 @@
 <h3>Contact form</h3>
 
-@if (contactForm) {
-
 <p>Complete and submit this form to send a message to me.</p>
 
 @if (submitProgress !== 'success') {
@@ -83,17 +81,3 @@
     LinkedIn</a>.
 </p>
 }
-
-} @else {
-
-<p class="alert alert-danger">
-  <strong>Whoops!</strong> There was an error creating the Contact Form. Please try refreshing the page.
-</p>
-
-}
-
-<!-- <ng-template #error>
-  <p class="alert alert-danger">
-    <strong>Whoops!</strong> There was an error creating the Contact Form. Please try refreshing the page.
-  </p>
-</ng-template> -->
