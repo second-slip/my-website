@@ -10,11 +10,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-    selector: 'app-contact-form',
-    templateUrl: './contact-form.component.html',
-    styleUrls: ['./contact-form.component.scss'],
-    standalone: true,
-    imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule]
+  selector: 'app-contact-form',
+  templateUrl: './contact-form.component.html',
+  styleUrls: ['./contact-form.component.scss'],
+  standalone: true,
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule]
 })
 export class ContactFormComponent {
   private _subscription = new Subject();
@@ -28,19 +28,25 @@ export class ContactFormComponent {
   }
 
   public onSubmit(): void {
-    this.requesting = true;
 
-    const model = this._mapToModel();
+    try {
+      const model = this._mapToModel();
 
-    this._service.postContactForm(model)
-      .pipe(first(), finalize(() => { this.requesting = true; }), takeUntil(this._subscription))
-      .subscribe({
-        next: (r) => {
-          if (r.success === true) { this.submitProgress = 'success'; }
-          else { this.submitProgress = 'error' }
-        },
-        error: () => { this.submitProgress = 'error'; }
-      });
+      this.requesting = true;
+
+      this._service.postContactForm(model)
+        .pipe(first(), finalize(() => { this.requesting = true; }), takeUntil(this._subscription))
+        .subscribe({
+          next: (r) => {
+            if (r.success === true) { this.submitProgress = 'success'; }
+            else { this.submitProgress = 'error' }
+          },
+          error: () => { this.submitProgress = 'error'; }
+        });
+    }
+    catch {
+      this.submitProgress = 'error';
+    }
   }
 
   private _createForm(): void {
@@ -51,7 +57,7 @@ export class ContactFormComponent {
     });
   }
 
-  private _mapToModel(): IContactForm {  // todo: try / catch here: this.submitProgress = 'error';
+  private _mapToModel(): IContactForm {
     const model = <IContactForm>{
       name: this.contactForm.value.name,
       email: this.contactForm.value.email,
