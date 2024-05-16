@@ -1,8 +1,5 @@
 import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
-
 import { ContactFormComponent } from './contact-form.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactFormService } from './contact-form.service';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,9 +10,6 @@ import { MatButtonHarness } from '@angular/material/button/testing';
 import { MatFormFieldHarness } from '@angular/material/form-field/testing'
 import { name, email, message, contactFormModel } from '../test-helpers/contact-form-helpers';
 import { of, throwError } from 'rxjs';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 describe('ContactFormComponent', () => {
   let component: ContactFormComponent;
@@ -36,7 +30,7 @@ describe('ContactFormComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatProgressSpinnerModule, ContactFormComponent],
+      imports: [ReactiveFormsModule, BrowserAnimationsModule, ContactFormComponent],
       providers: [{ provide: ContactFormService, useValue: fakeContactFormService }],
     }).compileComponents();
 
@@ -47,10 +41,10 @@ describe('ContactFormComponent', () => {
   };
 
 
-  it('should create', fakeAsync(async () => {
+  it('should create', async () => {
     await setup();
     expect(component).toBeTruthy();
-  }));
+  });
 
   describe('initial form setup', () => {
 
