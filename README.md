@@ -1,6 +1,6 @@
 # andrewstuartcross.co.uk
 
-This is the repository for my Angular 17 personal website which is served at <a href="https://www.andrewstuartcross.co.uk/">andrewstuartcross.co.uk/</a>
+This is the repository for my Angular 18 personal website which is served at <a href="https://www.andrewstuartcross.co.uk/">andrewstuartcross.co.uk/</a>
 
 [![Node.js CI](https://github.com/andrew-stuart-cross/my-website/actions/workflows/node.js.yml/badge.svg)](https://github.com/andrew-stuart-cross/my-website/actions/workflows/node.js.yml)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/andrew-stuart-cross/my-website/node.js.yml)
