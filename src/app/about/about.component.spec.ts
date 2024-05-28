@@ -1,24 +1,30 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AboutComponent } from './about.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-
-import { MockComponent } from 'ng-mocks';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
+import { Component } from '@angular/core';
+import { By } from '@angular/platform-browser';
+
+@Component({ // normally use ng-mocks (better approach) but using fake here to avoid importing the ng-mocks library just for this one test
+  selector: 'app-contact-form',
+  template: ``,
+  standalone: true,
+})
+class MockedContactFormComponent { }
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [AboutComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AboutComponent]
     })
       .overrideComponent(AboutComponent, {
         remove: { imports: [ContactFormComponent] },
-        add: { imports: [MockComponent(ContactFormComponent)] }
-      });
+        add: { imports: [MockedContactFormComponent] }
+      })
+      .compileComponents();
+
     fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -26,5 +32,14 @@ describe('AboutComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('renders the form (in child component)', () => {
+    const counterEl = fixture.debugElement.query(
+      By.directive(MockedContactFormComponent)
+    );
+    const form: ContactFormComponent = counterEl.componentInstance;
+
+    expect(form).toBeTruthy();
   });
 });
