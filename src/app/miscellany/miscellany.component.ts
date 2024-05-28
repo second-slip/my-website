@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
   templateUrl: './miscellany.component.html',
   styleUrl: './miscellany.component.scss'
 })
-export class MiscellanyComponent {
-
-}
+export class MiscellanyComponent { }

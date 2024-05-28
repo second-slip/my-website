@@ -5,8 +5,7 @@ import { IContactForm } from './i-contact-form.dto';
 
 const httpOptions = {
   headers: new HttpHeaders(
-    { 'Content-Type': 'application/json' },
-    )
+    { 'Content-Type': 'application/json' })
 };
 
 const url = 'https://birder-server.azurewebsites.net/api/message/send-contact-message'
