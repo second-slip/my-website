@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -9,10 +9,10 @@ import { MatButtonModule } from '@angular/material/button';
     imports: [MatButtonModule]
 })
 export class FooterComponent {
-  public message: string;
+  public message = signal('');
 
   constructor() {
     const year = new Date().getFullYear().toString();
-    this.message = `\u00A9 ${year} Andrew Stuart Cross`
+    this.message.set(`\u00A9 ${year} Andrew Stuart Cross`);
   }
 }

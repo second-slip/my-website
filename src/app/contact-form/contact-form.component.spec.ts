@@ -286,7 +286,7 @@ describe('ContactFormComponent', () => {
       const input3 = await loader.getHarness(MatInputHarness.with({ selector: '#message' }));
       await input3.setValue(message);
 
-      expect(fixture.componentInstance.submitProgress).toBe('idle');
+      expect(fixture.componentInstance.submitProgress()).toBe('idle');
 
       expect(await submitBtn.isDisabled()).toBe(false);
       await submitBtn.click();
@@ -294,7 +294,7 @@ describe('ContactFormComponent', () => {
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
 
-      expect(fixture.componentInstance.submitProgress).toBe('success');
+      expect(fixture.componentInstance.submitProgress()).toBe('success');
     });
 
 
@@ -346,7 +346,7 @@ describe('ContactFormComponent', () => {
       const input3 = await loader.getHarness(MatInputHarness.with({ selector: '#message' }));
       await input3.setValue(message);
 
-      expect(fixture.componentInstance.submitProgress).toBe('idle');
+      expect(fixture.componentInstance.submitProgress()).toBe('idle');
 
       expect(await submitBtn.isDisabled()).toBe(false);
       await submitBtn.click();
@@ -354,7 +354,7 @@ describe('ContactFormComponent', () => {
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
 
-      expect(fixture.componentInstance.submitProgress).toBe('error');
+      expect(fixture.componentInstance.submitProgress()).toBe('error');
     });
 
     it('should NOT hide the form on successful submission & show alert-danger message', async () => {
@@ -406,7 +406,7 @@ describe('ContactFormComponent', () => {
       const input3 = await loader.getHarness(MatInputHarness.with({ selector: '#message' }));
       await input3.setValue(message);
 
-      expect(fixture.componentInstance.submitProgress).toBe('idle');
+      expect(fixture.componentInstance.submitProgress()).toBe('idle');
 
       expect(await submitBtn.isDisabled()).toBe(false);
       await submitBtn.click();
@@ -414,7 +414,7 @@ describe('ContactFormComponent', () => {
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
 
-      expect(fixture.componentInstance.submitProgress).toBe('error');
+      expect(fixture.componentInstance.submitProgress()).toBe('error');
     });
 
     it('should NOT hide the form on successful submission & show alert-danger message', async () => {

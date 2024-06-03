@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormService } from './contact-form.service';
 import { Subject, finalize, first, takeUntil } from 'rxjs';
@@ -20,8 +20,8 @@ export class ContactFormComponent {
   private _subscription = new Subject();
 
   public contactForm!: FormGroup;
-  public requesting = false;
-  public submitProgress: 'idle' | 'success' | 'error' = 'idle';
+  public requesting = signal(false);
+  public submitProgress = signal('idle');
 
   constructor(private readonly _fb: FormBuilder, private readonly _service: ContactFormService) {
     this._createForm();
@@ -32,20 +32,20 @@ export class ContactFormComponent {
     try {
       const model = this._mapToModel();
 
-      this.requesting = true;
+      this.requesting.set(true);
 
       this._service.postContactForm(model)
-        .pipe(first(), finalize(() => { this.requesting = true; }), takeUntil(this._subscription))
+        .pipe(first(), finalize(() => { this.requesting.set(false); }), takeUntil(this._subscription))
         .subscribe({
           next: (r) => {
-            if (r.success === true) { this.submitProgress = 'success'; }
-            else { this.submitProgress = 'error' }
+            if (r.success === true) { this.submitProgress.set('success'); }
+            else { this.submitProgress.set('error') }
           },
-          error: () => { this.submitProgress = 'error'; }
+          error: () => { this.submitProgress.set('error'); }
         });
     }
     catch {
-      this.submitProgress = 'error';
+      this.submitProgress.set('error');
     }
   }
 

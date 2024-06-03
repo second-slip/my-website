@@ -2,7 +2,7 @@
 
 <p>Complete and then submit this form to send a message to me.</p>
 
-@if (submitProgress !== 'success') {
+@if (submitProgress() !== 'success') {
 <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
   <mat-form-field class="full-width" id="name">
@@ -48,11 +48,11 @@
   </p>
 
   <!-- todo: fix the button location -- too far -->
-  @if (!requesting) {
+  @if (!requesting()) {
   <button mat-stroked-button class="form-submit-btn" color="primary" type="submit"
     [disabled]="!contactForm.valid">Submit</button>
   }
-  @if (requesting) {
+  @if (requesting()) {
   <button mat-stroked-button class="form-submit-btn" type="button" disabled>
     Submitting the message...
     <mat-icon><mat-spinner diameter="15">
@@ -67,13 +67,13 @@
   <pre>Form status: {{contactForm.status | json}}</pre>
   <pre>Submit Progress: {{submitProgress}} </pre> -->
 
-@if (submitProgress === 'success') {
+@if (submitProgress() === 'success') {
 <p class="alert alert-success">
   <strong>Success!</strong> The message was successfully sent.
 </p>
 }
 
-@if (submitProgress === 'error') {
+@if (submitProgress() === 'error') {
 <p class="alert alert-danger">
   <strong>Whoops!</strong> An error occurred. Please try submitting the form again.
   <br>If the problem persists, try to contact me at <a href="https://www.linkedin.com/in/andrewstuartcross/"

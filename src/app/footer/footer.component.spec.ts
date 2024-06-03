@@ -48,6 +48,6 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
     
     // Assert
-    expect(component.message).toEqual(expected);
+    expect(component.message()).toEqual(expected);
   });
 });
