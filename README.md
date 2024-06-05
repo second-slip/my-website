@@ -9,9 +9,8 @@ This is the repository for my Angular 18 personal website which is served at <a 
 
 
 ## Change Log
-- 23/05/2024: updated to Angular version **18**
 - 03/06/2024: enabled Zoneless change detection (Angular without ZoneJS)
-
+- 23/05/2024: updated to Angular version **18**
 
 
 ## Development server
