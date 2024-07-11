@@ -8,34 +8,9 @@ import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatButtonHarness } from '@angular/material/button/testing';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { Router, Routes } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+import { NO_ERRORS_SCHEMA, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideRouter, Router } from '@angular/router';
 import { BlogComponent } from '../blog/blog.component';
-
-// let loader: HarnessLoader;
-
-// describe('MenuComponent', () => {
-//   let component: MenuComponent;
-//   let fixture: ComponentFixture<MenuComponent>;
-
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [MenuComponent]
-//     });
-//     fixture = TestBed.createComponent(MenuComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
-
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
-
-// import {HarnessLoader} from '@angular/cdk/testing';
-// import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
-
 
 
 describe('my-component', () => {
@@ -43,15 +18,19 @@ describe('my-component', () => {
   let loader: HarnessLoader;
   let router: Router;
 
+  const routes = [
+    { path: 'login', component: BlogComponent }
+  ];
+
 
   beforeEach(async () => {
     await TestBed.configureTestingModule(
       {
-    imports: [MatButtonModule, MatToolbarModule, RouterTestingModule.withRoutes([
-            { path: 'login', component: BlogComponent },
-        ]), MenuComponent],
-    schemas: [NO_ERRORS_SCHEMA]
-})
+        imports: [MatButtonModule, MatToolbarModule],
+        providers: [provideExperimentalZonelessChangeDetection(),
+        provideRouter(routes)
+        ]
+      })
       .compileComponents();
     router = TestBed.inject(Router);
     fixture = TestBed.createComponent(MenuComponent);
@@ -68,7 +47,7 @@ describe('my-component', () => {
   });
 
   it('render an active title button button', async () => {
-    const titleButton = await loader.getHarness(MatButtonHarness.with({selector: '.title-button'}));
+    const titleButton = await loader.getHarness(MatButtonHarness.with({ selector: '.title-button' }));
     //expect(fixture.componentInstance.confirmed).toBe(false);
     expect(await titleButton.isDisabled()).toBe(false);
     expect(await titleButton.getText()).toBe('andrewstuartcross.co.uk');

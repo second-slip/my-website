@@ -1,8 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { ContactFormService } from './contact-form.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse, provideHttpClient } from '@angular/common/http';
 import { contactFormModel, postContactFormResponse } from '../test-helpers/contact-form-helpers';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('ContactFormService', () => {
   let service: ContactFormService;
@@ -10,7 +11,11 @@ describe('ContactFormService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        provideExperimentalZonelessChangeDetection()
+      ]
     });
     service = TestBed.inject(ContactFormService);
     controller = TestBed.inject(HttpTestingController);

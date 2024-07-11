@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContactFormComponent } from './contact-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactFormService } from './contact-form.service';
@@ -10,6 +10,7 @@ import { MatButtonHarness } from '@angular/material/button/testing';
 import { MatFormFieldHarness } from '@angular/material/form-field/testing'
 import { name, email, message, contactFormModel } from '../test-helpers/contact-form-helpers';
 import { of, throwError } from 'rxjs';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('ContactFormComponent', () => {
   let component: ContactFormComponent;
@@ -30,8 +31,10 @@ describe('ContactFormComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, BrowserAnimationsModule, ContactFormComponent],
-      providers: [{ provide: ContactFormService, useValue: fakeContactFormService }],
+      imports: [ReactiveFormsModule, BrowserAnimationsModule],
+      providers: [{ provide: ContactFormService, useValue: fakeContactFormService },
+      provideExperimentalZonelessChangeDetection()
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ContactFormComponent);
@@ -213,7 +216,7 @@ describe('ContactFormComponent', () => {
       expect(await input.getValue()).toBe(message);
     });
 
-    it('should not submit an invalid form', fakeAsync(async () => {
+    it('should not submit an invalid form', async () => {
       await setup();
 
       const submitBtn = await loader.getHarness(MatButtonHarness.with({ text: 'Submit' }));
@@ -223,7 +226,7 @@ describe('ContactFormComponent', () => {
 
       expect(fakeContactFormService.postContactForm).not.toHaveBeenCalled();
       expect(fakeContactFormService.postContactForm).not.toHaveBeenCalledWith(contactFormModel);
-    }));
+    });
 
     it('the Submit button should be disabled unless all inputs are valid', async () => {
       await setup();

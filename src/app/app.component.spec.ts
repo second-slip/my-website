@@ -1,17 +1,20 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { BlogComponent } from './blog/blog.component';
 
 describe('AppComponent', () => {
+  const routes = [
+    { path: 'login', component: BlogComponent }
+  ];
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [
-        RouterTestingModule,
-        AppComponent
-    ],
-    schemas: [NO_ERRORS_SCHEMA],
-}).compileComponents();
+      providers: [provideExperimentalZonelessChangeDetection(),
+        provideRouter(routes)
+      ]
+    }).compileComponents();
   });
 
   it('should create the app', () => {

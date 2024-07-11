@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AboutComponent } from './about.component';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
-import { Component } from '@angular/core';
+import { Component, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 @Component({ // normally use ng-mocks (better approach) but using fake here to avoid importing the ng-mocks library just for this one test
@@ -17,7 +17,7 @@ describe('AboutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AboutComponent]
+      providers: [provideExperimentalZonelessChangeDetection()]
     })
       .overrideComponent(AboutComponent, {
         remove: { imports: [ContactFormComponent] },

@@ -4,6 +4,7 @@ import { FooterComponent } from './footer.component';
 import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatButtonHarness } from '@angular/material/button/testing';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -12,8 +13,8 @@ describe('FooterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [FooterComponent]
-});
+      providers: [provideExperimentalZonelessChangeDetection()]
+    });
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     loader = TestbedHarnessEnvironment.loader(fixture);
@@ -46,7 +47,7 @@ describe('FooterComponent', () => {
 
     // Act or change
     fixture.detectChanges();
-    
+
     // Assert
     expect(component.message()).toEqual(expected);
   });
