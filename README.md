@@ -2,10 +2,10 @@
 
 This is the repository for my Angular 18 personal website which is served at <a href="https://www.andrewstuartcross.co.uk/">andrewstuartcross.co.uk/</a>
 
-[![Node.js CI](https://github.com/andrew-stuart-cross/my-website/actions/workflows/node.js.yml/badge.svg)](https://github.com/andrew-stuart-cross/my-website/actions/workflows/node.js.yml)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/andrew-stuart-cross/my-website/node.js.yml)
-[![codecov](https://codecov.io/gh/andrew-stuart-cross/my-website/branch/master/graph/badge.svg?token=LIA3YIDXX2)](https://codecov.io/gh/andrew-stuart-cross/my-website)
-[![Known Vulnerabilities](https://snyk.io/test/github/andrew-stuart-cross/my-website/badge.svg)](https://snyk.io/test/github/andrew-stuart-cross/my-website)
+[![Node.js CI](https://github.com/second-slip/my-website/actions/workflows/node.js.yml/badge.svg)](https://github.com/second-slip/my-website/actions/workflows/node.js.yml)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/second-slip/my-website/node.js.yml)
+[![codecov](https://codecov.io/gh/second-slip/my-website/branch/master/graph/badge.svg?token=LIA3YIDXX2)](https://codecov.io/gh/second-slip/my-website)
+[![Known Vulnerabilities](https://snyk.io/test/github/second-slip/my-website/badge.svg)](https://snyk.io/test/github/second-slip/my-website)
 
 
 ## Change Log
