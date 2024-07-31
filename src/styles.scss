@@ -4,17 +4,20 @@ html,
 body {
     height: 100%;
 }
+
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     padding-top: 100px;
 }
 
+
 /* Small devices (up to 768px) */
 @media only screen and (max-width: 768px) {
     .router-outlet {
         padding: 0% 8%;
     }
+
     .footer {
         padding: 0% 8%;
         margin: 3% 0%;
@@ -26,6 +29,7 @@ body {
     .router-outlet {
         padding: 0% 20%;
     }
+
     .footer {
         padding: 0% 20%;
         margin: 3% 0%;

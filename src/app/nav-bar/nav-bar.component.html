@@ -1,0 +1,81 @@
+<mat-toolbar class="nav-menu">
+
+    <a mat-button class="title-button" aria-label="title button" routerLink="/">andrewstuartcross.co.uk</a>
+
+    <span class="example-spacer"></span>
+
+    <div class="larger-screen-menu action-buttons">
+        
+        <a mat-button class="code-btn" aria-label="..." routerLink="code" routerLinkActive="activebutton">
+            <mat-icon>code</mat-icon>
+            <span>Code</span>
+        </a>
+
+        <a mat-button class="about-btn" aria-label="..." routerLink="about" routerLinkActive="activebutton"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon>lightbulb</mat-icon>
+            <span>About</span>
+        </a>
+
+        <a mat-icon-button class="github-icon-button" aria-label="Example icon-button with share icon"
+            href="https://github.com/second-slip" target="_blank">
+            <!-- <mat-icon>share</mat-icon> -->
+            <img src=".\assets\github-mark.png" alt="GitHub icon" />
+        </a>
+
+    </div>
+
+    <div class="smaller-screen-collapse-menu">
+
+        <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+
+            <a mat-menu-item aria-label="..." routerLink="code" routerLinkActive="activebutton"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <mat-icon>code</mat-icon>
+                <span>Code</span>
+            </a>
+
+            <a mat-menu-item aria-label="..." routerLink="about" routerLinkActive="activebutton"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <mat-icon>lightbulb</mat-icon>
+                <span>About</span>
+            </a>
+
+            <a mat-menu-item class="action-button abridge" aria-label="..." routerLink="miscellany"
+                routerLinkActive="activebutton">
+                <mat-icon>miscellaneous_services</mat-icon>
+                <span>Misc</span>
+            </a>
+
+            <a mat-icon-button class="github-icon-button" aria-label="button hyperlink to GitHub"
+                href="https://github.com/second-slip" target="_blank">
+                <!-- <mat-icon>share</mat-icon> -->
+                <img src=".\assets\github-mark.png" alt="GitHub icon" />
+                <span class="github-text">Github</span>
+            </a>
+            <!-- <a mat-menu-item  aria-label="..." routerLink="/" routerLinkActive="activebutton"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon>leaderboard</mat-icon>
+            <span>Charts</span>
+        </a>
+
+        <a mat-menu-item  aria-label="..." routerLink="ideas" routerLinkActive="activebutton"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon>lightbulb</mat-icon>
+            <span>Ideas</span>
+        </a> -->
+
+            <!-- <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+        </button> -->
+
+        </mat-menu>
+
+    </div>
+</mat-toolbar>

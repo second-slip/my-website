@@ -1,0 +1,54 @@
+.nav-menu {
+    display: flex;
+    position: fixed;
+    padding: 0% 20%;
+    z-index: 9999;
+    top: 0;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.action-buttons,
+.github-icon-button {
+    display: flex;
+    align-items: center;
+    font-size: medium;
+}
+.github-text {
+    margin-left: 10px;
+}
+
+.activebutton {
+    // background-color: beige;
+    // color: white;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+    .larger-screen-menu {
+        display: none;
+    }
+
+    .title-button {
+        font-weight: bold;
+        font-size: small;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .smaller-screen-collapse-menu {
+        display: none;
+    }
+
+    .nav-menu {
+        min-height: 80px;
+        height: 80px;
+    }
+
+    .title-button {
+        font-weight: bold;
+        font-size: medium;
+    }
+}
