@@ -1,7 +1,7 @@
 .nav-menu {
     display: flex;
     position: fixed;
-    z-index: 9999;
+    z-index: 9999;  // in a different app, I defined index '1' and content was appear above the toolbar...
     top: 0;
 }
 
