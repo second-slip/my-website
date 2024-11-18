@@ -13,6 +13,6 @@ export class FooterComponent {
 
   constructor() {
     const year = new Date().getFullYear().toString();
-    this.message.set(`\u00A9 ${year} Andrew Stuart Cross`);
+    this.message.set(`\u00A9 2023 \u2014 ${year} Andrew Stuart Cross`);
   }
 }

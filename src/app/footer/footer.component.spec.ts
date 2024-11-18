@@ -43,7 +43,7 @@ describe('FooterComponent', () => {
   it('should set the year property to current year', () => {
     // Arrange
     const year = new Date().getFullYear().toString();
-    const expected = `\u00A9 ${year} Andrew Stuart Cross`;
+    const expected = `\u00A9 2023 \u2014 ${year} Andrew Stuart Cross`;
 
     // Act or change
     fixture.detectChanges();
