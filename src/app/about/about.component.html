@@ -1,90 +1,120 @@
-<section >
+<section>
+  <h1 class="mat-headline-4 centre">About</h1>
 
-    <h1 class="mat-headline-4 centre">About</h1>
-
-    <P>
-        This page is about me, about this website; and about how to contact me, if you are interested.
-    </P>
-
+  <P>
+    This page is about me, about this website; and about how to contact me, if
+    you are interested.
+  </P>
 </section>
 
 <section>
+  <h2>About me</h2>
 
-    <h2>About me</h2>
+  <P>
+    My name is Andrew and I am a software developer. I am experienced in the
+    full stack development of websites and desktop applications.
+  </P>
 
-    <P>
-        My name is Andrew and I am a software developer. I am experienced in the full stack development of websites and
-        desktop applications.
-    </P>
+  <ul>
+    <li>I work with .NET (C#) and Angular.</li>
+    <li>I am always learning how to write better code.</li>
+    <li>
+      I'm interested in practical applications of data science and machine
+      learning.
+    </li>
+  </ul>
 
-    <ul>
-        <li>I work with .NET (C#) and Angular.</li>
-        <li>I am always learning how to write better code.</li>
-        <li>I'm interested in practical applications of data science and machine learning.</li>
-    </ul>
-
-    <p>
-        There is more information on my <a href="https://github.com/second-slip/"
-            target="_blank"><img class="text-icons" src=".\assets\github-mark.png" alt="GitHub icon" /> GitHub</a>
-        profile as well as the repositories for my personal code projects.
-    </p>
-
+  <p>
+    There is more information on my
+    <a href="https://github.com/second-slip/" target="_blank"
+      ><img
+        class="text-icons"
+        src=".\assets\github-mark.png"
+        alt="GitHub icon"
+      />
+      GitHub</a
+    >
+    profile as well as the repositories for my personal code projects.
+  </p>
 </section>
 
 <section>
+  <h2>About this website</h2>
 
-    <h2>About this website</h2>
+  <p>
+    This website is built on the Angular v18 development platform.
+    <a href="https://angular.io/" target="_blank">Angular</a> is a
+    TypeScript-based, open-source, single-page web application framework. Other
+    technical features are:
+  </p>
 
-    <p>
-        This website is built on the Angular v18 development platform. <a href="https://angular.io/"
-            target="_blank">Angular</a> is a TypeScript-based, open-source,
-        single-page web application framework. Other technical features are:
-    </p>
+  <ul>
+    <li>
+      Material Design using the official
+      <a href="https://material.angular.io/" target="_blank"
+        >Angular Material</a
+      >
+      components;
+    </li>
 
-    <ul>
-        <li>
-            Material Design using the official <a href="https://material.angular.io/" target="_blank">Angular
-                Material</a> components;
-        </li>
+    <li>
+      tested with the <a href="https://jasmine.github.io/">Jasmine</a> testing
+      framework and the <a href="https://karma-runner.github.io/">Karma</a> test
+      runner. The Material Design components are tested with the
+      <a
+        href="https://material.angular.io/guide/using-component-harnesses"
+        target="_blank"
+        >test harness</a
+      >. The code test coverage is:
+      <a href="https://codecov.io/gh/second-slip/my-website">
+        <img
+          class="text-icons"
+          src="https://codecov.io/gh/second-slip/my-website/branch/master/graph/badge.svg?token=cCIxAWPeGl"
+        />
+      </a>
+    </li>
 
-        <li>
-            tested with the <a href="https://jasmine.github.io/">Jasmine</a> testing framework and the <a
-                href="https://karma-runner.github.io/">Karma</a> test runner. The Material Design components are tested
-            with the
-            <a href="https://material.angular.io/guide/using-component-harnesses" target="_blank">test harness</a>. The
-            code test coverage is: <a href="https://codecov.io/gh/second-slip/my-website">
-                <img class="text-icons"
-                    src="https://codecov.io/gh/second-slip/my-website/branch/master/graph/badge.svg?token=cCIxAWPeGl" />
-            </a>
-        </li>
+    <li>
+      published with the
+      <a
+        href="https://azure.microsoft.com/en-gb/products/app-service/static/"
+        target="_blank"
+        >Azure Static Web Apps</a
+      >
+      service;
+    </li>
 
-        <li>
-            published with the <a href="https://azure.microsoft.com/en-gb/products/app-service/static/"
-                target="_blank">Azure Static Web Apps</a> service;
-        </li>
+    <li>
+      open-source in the
+      <a href="https://github.com/second-slip/my-website" target="_blank"
+        >my-website</a
+      >
+      GitHub repository; and
+    </li>
 
-        <li>
-            open-source in the <a href="https://github.com/second-slip/my-website"
-                target="_blank">my-website</a> GitHub repository; and
-        </li>
-
-        <li>
-            continuous integration with <a>GitHub Actions</a> to manage build, test and deployment.
-        </li>
-    </ul>
-
+    <li>
+      continuous integration with <a>GitHub Actions</a> to manage build, test
+      and deployment.
+    </li>
+  </ul>
 </section>
 
 <section>
+  <h2>Contact me</h2>
 
-    <h2>Contact me</h2>
+  <p>
+    You can contact me at
+    <a href="https://www.linkedin.com/in/andrewstuartcross/" target="_blank"
+      ><img
+        class="text-icons"
+        src=".\assets\linkedIn_logo_initials.png"
+        alt="LinkedIn icon"
+      />
+      LinkedIn</a
+    >; or by filling out the form, below:-
+  </p>
 
-    <p>You can contact me at <a href="https://www.linkedin.com/in/andrewstuartcross/" target="_blank"><img
-                class="text-icons" src=".\assets\linkedIn_logo_initials.png" alt="LinkedIn icon" /> LinkedIn</a>; or by
-        filling out the
-        form,
-        below:-</p>
-
-    <app-contact-form></app-contact-form>
-
+  @defer () {
+  <app-contact-form></app-contact-form>
+  }
 </section>
