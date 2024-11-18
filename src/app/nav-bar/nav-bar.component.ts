@@ -14,10 +14,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatMenuModule,
     RouterLink,
-    RouterLinkActive],
+    RouterLinkActive,
+  ],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.scss'
+  styleUrl: './nav-bar.component.scss',
 })
-export class NavBarComponent {
-
-}
+export class NavBarComponent {}
