@@ -6,17 +6,16 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
-  selector: 'app-nav-bar',
-  standalone: true,
-  imports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    RouterLink,
-    RouterLinkActive,
-  ],
-  templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.scss',
+    selector: 'app-nav-bar',
+    imports: [
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        RouterLink,
+        RouterLinkActive,
+    ],
+    templateUrl: './nav-bar.component.html',
+    styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {}
