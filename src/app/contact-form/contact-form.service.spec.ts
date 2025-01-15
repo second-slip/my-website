@@ -1,8 +1,14 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { ContactFormService } from './contact-form.service';
 import { HttpErrorResponse, provideHttpClient } from '@angular/common/http';
-import { contactFormModel, postContactFormResponse } from '../test-helpers/contact-form-helpers';
+import {
+  contactFormModel,
+  postContactFormResponse,
+} from '../test-helpers/contact-form-helpers';
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('ContactFormService', () => {
@@ -14,8 +20,8 @@ describe('ContactFormService', () => {
       providers: [
         provideHttpClient(),
         provideHttpClientTesting(),
-        provideExperimentalZonelessChangeDetection()
-      ]
+        provideExperimentalZonelessChangeDetection(),
+      ],
     });
     service = TestBed.inject(ContactFormService);
     controller = TestBed.inject(HttpTestingController);
@@ -51,7 +57,9 @@ describe('ContactFormService', () => {
       errors.push(error);
     };
 
-    service.postContactForm(contactFormModel).subscribe({ next: fail, error: recordError, complete: fail, });
+    service
+      .postContactForm(contactFormModel)
+      .subscribe({ next: fail, error: recordError, complete: fail });
     const status = 500;
     const statusText = 'Internal Server Error';
     const errorEvent = new ErrorEvent('API error');

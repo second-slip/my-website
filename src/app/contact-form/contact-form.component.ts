@@ -31,8 +31,8 @@ export class ContactFormComponent {
   private _subscription = new Subject();
 
   public contactForm!: FormGroup;
-  public requesting = signal(false);
-  public submitProgress = signal('idle');
+  protected requesting = signal(false);
+  protected submitProgress = signal('idle');
 
   constructor(
     private readonly _fb: FormBuilder,

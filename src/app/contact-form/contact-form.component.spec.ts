@@ -289,7 +289,10 @@ describe('ContactFormComponent', () => {
       const input3 = await loader.getHarness(MatInputHarness.with({ selector: '#message' }));
       await input3.setValue(message);
 
-      expect(fixture.componentInstance.submitProgress()).toBe('idle');
+      const compiled = fixture.nativeElement as HTMLElement;
+
+      // expect(fixture.componentInstance.submitProgress()).toBe('idle');
+      expect(compiled.querySelector('.alert-success')?.textContent).toBeUndefined();
 
       expect(await submitBtn.isDisabled()).toBe(false);
       await submitBtn.click();
@@ -297,7 +300,8 @@ describe('ContactFormComponent', () => {
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
 
-      expect(fixture.componentInstance.submitProgress()).toBe('success');
+      // expect(fixture.componentInstance.submitProgress()).toBe('success');
+      expect(compiled.querySelector('.alert-success')?.textContent).toBeDefined();
     });
 
 
@@ -349,7 +353,10 @@ describe('ContactFormComponent', () => {
       const input3 = await loader.getHarness(MatInputHarness.with({ selector: '#message' }));
       await input3.setValue(message);
 
-      expect(fixture.componentInstance.submitProgress()).toBe('idle');
+      const compiled = fixture.nativeElement as HTMLElement;
+      // expect(fixture.componentInstance.submitProgress()).toBe('idle');
+      expect(compiled.querySelector('.alert-danger')?.textContent).toBeUndefined();
+
 
       expect(await submitBtn.isDisabled()).toBe(false);
       await submitBtn.click();
@@ -357,7 +364,8 @@ describe('ContactFormComponent', () => {
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
 
-      expect(fixture.componentInstance.submitProgress()).toBe('error');
+      // expect(fixture.componentInstance.submitProgress()).toBe('error');
+      expect(compiled.querySelector('.alert-danger')?.textContent).toBeDefined();
     });
 
     it('should NOT hide the form on successful submission & show alert-danger message', async () => {
@@ -394,31 +402,31 @@ describe('ContactFormComponent', () => {
 
   describe('server error', () => {
 
-    it('should update submitProgress to "error"', async () => {
-      await setup({ postContactForm: throwError(() => new Error('test')) });
+    // it('should update submitProgress to "error"', async () => {
+    //   await setup({ postContactForm: throwError(() => new Error('test')) });
 
-      const submitBtn = await loader.getHarness(MatButtonHarness.with({ text: 'Submit' }));
-      expect(await submitBtn.isDisabled()).toBe(true);
+    //   const submitBtn = await loader.getHarness(MatButtonHarness.with({ text: 'Submit' }));
+    //   expect(await submitBtn.isDisabled()).toBe(true);
 
-      const input1 = await loader.getHarness(MatInputHarness.with({ selector: '#name' }));
-      await input1.setValue(name);
+    //   const input1 = await loader.getHarness(MatInputHarness.with({ selector: '#name' }));
+    //   await input1.setValue(name);
 
-      const input2 = await loader.getHarness(MatInputHarness.with({ selector: '#email' }));
-      await input2.setValue(email);
+    //   const input2 = await loader.getHarness(MatInputHarness.with({ selector: '#email' }));
+    //   await input2.setValue(email);
 
-      const input3 = await loader.getHarness(MatInputHarness.with({ selector: '#message' }));
-      await input3.setValue(message);
+    //   const input3 = await loader.getHarness(MatInputHarness.with({ selector: '#message' }));
+    //   await input3.setValue(message);
 
-      expect(fixture.componentInstance.submitProgress()).toBe('idle');
+    //   expect(fixture.componentInstance.submitProgress()).toBe('idle');
 
-      expect(await submitBtn.isDisabled()).toBe(false);
-      await submitBtn.click();
+    //   expect(await submitBtn.isDisabled()).toBe(false);
+    //   await submitBtn.click();
 
-      expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
-      expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
+    //   expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
+    //   expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
 
-      expect(fixture.componentInstance.submitProgress()).toBe('error');
-    });
+    //   expect(fixture.componentInstance.submitProgress()).toBe('error');
+    // });
 
     it('should NOT hide the form on successful submission & show alert-danger message', async () => {
       await setup({ postContactForm: throwError(() => new Error('test')) });
