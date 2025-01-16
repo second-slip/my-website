@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
     imports: [MatButtonModule]
 })
 export class FooterComponent {
-  public message = signal('');
+  protected message = signal('');
 
   constructor() {
     const year = new Date().getFullYear().toString();

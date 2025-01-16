@@ -10,6 +10,4 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   styleUrls: ['./app.component.scss'],
   imports: [NavBarComponent, RouterOutlet, FooterComponent, NavBarComponent],
 })
-export class AppComponent {
-  title = 'A S Cross';
-}
+export class AppComponent {}
