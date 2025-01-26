@@ -1,58 +1,58 @@
-.nav-menu {
-    display: flex;
-    position: fixed;
-    z-index: 9999;  // in a different app, I defined index '1' and content was appear above the toolbar...
-    top: 0;
+mat-toolbar {
+  display: flex;
+  position: fixed;
+  z-index: 9999; // in a different app, I defined index '1' and content was appear above the toolbar...
+  top: 0;
 }
 
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .action-buttons,
 .github-icon-button {
-    display: flex;
-    align-items: center;
-    font-size: medium;
+  display: flex;
+  align-items: center;
+  font-size: medium;
 }
 .github-text {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .activebutton {
-    // background-color: beige;
-    // color: white;
-    text-decoration: underline;
+  // background-color: beige;
+  // color: white;
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 768px) {
-    .nav-menu {
-        padding: 0% 8%;
-    }
+  mat-toolbar {
+    padding: 0% 8%;
+  }
 
-    .larger-screen-menu {
-        display: none;
-    }
+  .larger-screen-menu {
+    display: none;
+  }
 
-    .title-button {
-        font-weight: bold;
-        font-size: small;
-    }
+  .title-button {
+    font-weight: bold;
+    font-size: small;
+  }
 }
 
 @media only screen and (min-width: 769px) {
-    .nav-menu {
-        min-height: 80px;
-        height: 80px;
-        padding: 0% 20%;
-    }
+  mat-toolbar {
+    min-height: 80px;
+    height: 80px;
+    padding: 0% 20%;
+  }
 
-    .smaller-screen-collapse-menu {
-        display: none;
-    }
+  .smaller-screen-collapse-menu {
+    display: none;
+  }
 
-    .title-button {
-        font-weight: bold;
-        font-size: medium;
-    }
+  .title-button {
+    font-weight: bold;
+    font-size: medium;
+  }
 }
