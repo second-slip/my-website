@@ -113,7 +113,6 @@ describe('ContactFormComponent', () => {
       await ((await formField.getControl()) as MatInputHarness)?.blur();
       expect(await formField.getTextErrors()).toEqual(['Name is required']);
 
-      fixture.componentInstance.contactForm.get('name')?.setValue('');
       expect(await formField.isControlValid()).toBe(false);
 
       const compiled = fixture.nativeElement as HTMLElement;
@@ -131,7 +130,6 @@ describe('ContactFormComponent', () => {
       await ((await formField.getControl()) as MatInputHarness)?.blur();
       expect(await formField.getTextErrors()).toEqual(['Email is required']);
 
-      fixture.componentInstance.contactForm.get('email')?.setValue('');
       expect(await formField.isControlValid()).toBe(false);
 
       const compiled = fixture.nativeElement as HTMLElement;
@@ -150,7 +148,6 @@ describe('ContactFormComponent', () => {
       await ((await formField.getControl()) as MatInputHarness)?.setValue('k');
       expect(await formField.getTextErrors()).toEqual(['The email is not valid']);
 
-      fixture.componentInstance.contactForm.get('email')?.setValue('k');
       expect(await formField.isControlValid()).toBe(false);
 
       const compiled = fixture.nativeElement as HTMLElement;
@@ -165,11 +162,12 @@ describe('ContactFormComponent', () => {
       expect((await formField.getControl()) instanceof MatInputHarness).toBe(true);
       expect(await formField.getTextErrors()).toEqual([]);
 
+      const tooShortMessage = "short";
+
       await ((await formField.getControl()) as MatInputHarness)?.blur();
-      await ((await formField.getControl()) as MatInputHarness)?.setValue('ghjkg');
+      await ((await formField.getControl()) as MatInputHarness)?.setValue(tooShortMessage);
       expect(await formField.getTextErrors()).toEqual(['The message is too short']);
 
-      fixture.componentInstance.contactForm.get('message')?.setValue('ghjkg');
       expect(await formField.isControlValid()).toBe(false);
 
       const compiled = fixture.nativeElement as HTMLElement;
@@ -187,7 +185,6 @@ describe('ContactFormComponent', () => {
       await ((await formField.getControl()) as MatInputHarness)?.blur();
       expect(await formField.getTextErrors()).toEqual(['Message is required']);
 
-      fixture.componentInstance.contactForm.get('message')?.setValue('');
       expect(await formField.isControlValid()).toBe(false);
 
       const compiled = fixture.nativeElement as HTMLElement;
@@ -268,10 +265,7 @@ describe('ContactFormComponent', () => {
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
     });
-
-
   });
-
 
   describe('server responds successfully', () => {
 
@@ -300,7 +294,6 @@ describe('ContactFormComponent', () => {
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
 
-      // expect(fixture.componentInstance.submitProgress()).toBe('success');
       expect(compiled.querySelector('.alert-success')?.textContent).toBeDefined();
     });
 
@@ -354,7 +347,6 @@ describe('ContactFormComponent', () => {
       await input3.setValue(message);
 
       const compiled = fixture.nativeElement as HTMLElement;
-      // expect(fixture.componentInstance.submitProgress()).toBe('idle');
       expect(compiled.querySelector('.alert-danger')?.textContent).toBeUndefined();
 
 
@@ -364,7 +356,6 @@ describe('ContactFormComponent', () => {
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledTimes(1);
       expect(fakeContactFormService.postContactForm).toHaveBeenCalledWith(contactFormModel);
 
-      // expect(fixture.componentInstance.submitProgress()).toBe('error');
       expect(compiled.querySelector('.alert-danger')?.textContent).toBeDefined();
     });
 
@@ -456,12 +447,6 @@ describe('ContactFormComponent', () => {
       expect(compiled.querySelector('.contact-form')?.textContent).toBeDefined();
       expect(compiled.querySelector('.alert-success')?.textContent).toBeUndefined();
       expect(compiled.querySelector('.alert-danger')?.textContent).toBeDefined();
-    });
-
-
+    })
   });
-
-
-
-
 });
