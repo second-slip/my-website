@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-contact-form',
@@ -25,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    NgOptimizedImage
   ],
 })
 export class ContactFormComponent {

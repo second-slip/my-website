@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -5,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
     selector: 'app-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss'],
-    imports: [MatButtonModule]
+    imports: [MatButtonModule, NgOptimizedImage]
 })
 export class FooterComponent {
   protected message = signal('');
